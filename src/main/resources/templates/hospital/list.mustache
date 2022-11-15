@@ -1,0 +1,24 @@
+{{>layouts/header}}
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">번호</th>
+        <th scope="col">병원명</th>
+        <th scope="col">도로명주소</th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    {{#hospitals}}
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td><a href="/hospitals/{{id}}"> {{hospital_name}}</a></td>
+            <td>{{road_name_address}}</td>
+        </tr>
+    {{/hospitals}}
+    </tbody>
+</table>
+<a href="/hospitals/list?page={{previous}}" class="card-link">이전 페이지</a>
+<a href="/hospitals/list?page={{next}}" class="card-link">다음 페이지</a>
+{{>layouts/footer}}

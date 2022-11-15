@@ -1,0 +1,20 @@
+{{>layouts/header}}
+
+{{#article}}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">{{id}}</h6>
+            <h5 class="card-title">{{title}}</h5>
+            <p class="card-text">{{content}}</p>
+        </div>
+        <a href="/articles/{{id}}/edit" class="btn btn-primary">글 수정</a>
+        <a href="/articles/{{id}}/delete" class="btn btn-danger">글 삭제</a>
+    </div>
+{{/article}}
+{{^article}}
+                    <p>{{message}}</p>
+{{/article}}
+<a href="/articles/list" class="card-link">글 목록</a>
+<a href="/articles/new" class="card-link">새 글 작성</a>
+
+{{>layouts/footer}}

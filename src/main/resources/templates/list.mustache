@@ -1,0 +1,25 @@
+{{>layouts/header}}
+
+<h1>글 목록 입니다.</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">글 번호</th>
+        <th scope="col">글 제목</th>
+        <th scope="col">글 내용</th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    {{#articles}}
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td><a href="/articles/{{id}}"> {{title}}</a></td>
+            <td>{{content}}</td>
+        </tr>
+    {{/articles}}
+    </tbody>
+</table>
+<a href="/articles/new" class="card-link">새 글 작성</a>
+
+{{>layouts/footer}}
